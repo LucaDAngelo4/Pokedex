@@ -95,15 +95,14 @@ export default class PokemonCard extends Component {
     let newCaughtList = this.state.caughtList;
     let newCaughtCount = this.state.caughtCount;
     
-    if (isCaught == true) {
+    if (isCaught === true) {
       
       newCaughtList.push(name)
       newCaughtCount +=1
-      //this.setState({isCaught, caughtList, caughtCount})
 
       console.log(`TRUE, ADDING ${name}: ${newCaughtList} ${newCaughtCount}`)
       
-    } else if (isCaught == false) {
+    } else if (isCaught === false) {
       var remove = name;
       for (var i = 0; i < newCaughtList.length; i++) {
         if (newCaughtList[i] === remove) {
@@ -111,8 +110,6 @@ export default class PokemonCard extends Component {
         }
       }
       newCaughtCount -= 1;
-      //console.log('' + JSON.stringify(this.state))
-      //this.setState({isCaught, caughtList, caughtCount})
 
       console.log(`FALSE, REMOVING ${name}: ${newCaughtList} ${newCaughtCount}`)
 

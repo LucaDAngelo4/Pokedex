@@ -1,14 +1,22 @@
 .App {
+    background: url('https://wallpaperaccess.com/full/154722.jpg');
     background-attachment: fixed;
-    background-position: center;
     background-repeat: none;
     background-color: transparent;
-    background-size:contain ;
+    background-size: contain;
     padding-top: 4rem;
     min-height: 100vh
 }
 
 body {
     height: 100%;
-    margin: 0
+    margin: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#pokedex::-webkit-scrollbar {
+    display: none;
 }

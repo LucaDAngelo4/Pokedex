@@ -81,7 +81,6 @@ export default class EvolutionChain extends Component {
         });
       });
 
-      //`https://img.pokemondb.net/sprites/lets-go-pikachu-eevee/normal/${name}.png`};
       baseSpriteUrl = `https://img.pokemondb.net/sprites/lets-go-pikachu-eevee/normal/${base}.png`;
       stage1SpriteUrl = `https://img.pokemondb.net/sprites/lets-go-pikachu-eevee/normal/${stage1}.png`;
       stage2SpriteUrl = `https://img.pokemondb.net/sprites/lets-go-pikachu-eevee/normal/${stage2}.png`;

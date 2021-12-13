@@ -26,14 +26,13 @@ export default class Berries extends Component {
     const res = await axios.get(this.state.url);
     this.setState({berries: res.data['results']});
     
-    //console.log('berries ' + JSON.stringify(res.data['results']))
   }
 
   render() {
     return (
       <React.Fragment>
         {this.state.berries ? (
-          <div className="row" style={{marginLeft: '100px'}}>
+          <div className="row" style={{marginLeft: '100px', marginTop: '30px'}}>
             {this.state.berries.map(berry => ( 
               <BerryCard
                 key={berry.name}

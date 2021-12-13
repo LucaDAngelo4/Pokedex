@@ -20,7 +20,7 @@ export default class PokedexList extends Component {
     return (
       <React.Fragment>
         {this.state.pokemon ? (
-          <div className='col'>
+          <div id='pokedex' className='col' style={{overflow: 'scroll'}}>
             {this.state.pokemon.map(pokemon => (
               <PokemonCard
                 key={pokemon.name} 

@@ -1,10 +1,12 @@
 import React, { Component, useState } from 'react'
 import styled from 'styled-components'
-import Search from '../utils/Search';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
 
-const navbarStyled = styled.nav``;
+const NavbarStyled = styled.nav`
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  background-color: #ef5350
+`;
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: black;
@@ -34,22 +36,18 @@ export default class Navbar extends Component {
   render() {
     return (
       <div>
-        <nav 
+        <NavbarStyled 
           className='navbar navbar-expand-md navbar-dark fixed-top'
-          style={{backgroundColor: '#ef5350'}}
         >
-          <div style={{ justifyContent: 'center', marginBottom: '30px'}}>
-            <StyledLink to={'/'}>
-              <a style={{fontWeight: 'bold', marginLeft: '20px', position: 'absolute'}}>Pokédex</a>
-            </StyledLink>
+          <div style={{ justifyContent: 'center', marginBottom: '30px', width: '90%', height: '30px'}}>
+            <div style={{marginTop: '10px', marginLeft: '7px'}} >
+              <StyledLink to={'/'}>
+                  <h4>Pokédex</h4>
+              </StyledLink>
+            </div>
           </div>
-          <div className='container align-items-center' style={{maxWidth: '80%'}}>
-            <span className='float-center'>
-              <Search placeholder='Start writing a name...' data={this.data} />
-            </span>
-          </div>
-          <div style={{float: 'right', marginRight: '30px'}}>
-            <div style={{marginRight: '10'}}>
+          <div style={{ width: '5%', justifyContent: 'right'}}>
+            <div style={{display: 'flex', position: 'relative'}}>
               <Link to={'/berries'}>
                 <button 
                   className='button btn-outline-success'
@@ -58,7 +56,7 @@ export default class Navbar extends Component {
               </Link>
             </div>
           </div>
-        </nav>
+        </NavbarStyled>
       </div>
       )
     }

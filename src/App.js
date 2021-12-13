@@ -8,12 +8,12 @@ import Pokemon from './components/pokemon/Pokemon';
 import Berries from './components/berries/Berries';
 import BerryDetails from './components/berries/BerryDetails';
 
-const backgroundUrl = 'https://wallpaperaccess.com/full/154722.jpg';
+//const backgroundUrl = 'https://wallpaperaccess.com/full/154722.jpg';
 
 function App() {
   return (
     <Router>
-      <div className="App" style={{background: `url(${backgroundUrl}`}}>
+      <div className="App">
         <Navbar />
         <div className='container' style={{marginLeft: '30px', width: '90%'}}>
           <Switch>

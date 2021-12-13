@@ -94,8 +94,8 @@ export default class BerryDetails extends Component {
 
   render() {
     return (
-      <div className="col">
-        <div className="card" style={{width: '80%', marginLeft: '100px'}}>
+      <div className="col" style={{marginLeft: '100px'}}>
+        <div className="card" style={{width: '80%', marginLeft: '150px', marginTop: '30px'}}>
           <div className="card-header">
             <div className="row">
               <div className="col-5">

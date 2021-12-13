@@ -24,12 +24,9 @@ const TYPE_COLORS = {
   water: "3295F6",
 };
 
-//IMMAGINE 'https://img.pokemondb.net/sprites/bank/normal/bulbasaur.png'
-
 const StyledBall = styled.img`
   width: 25px;
   height: 25px;
-  margin: 5px;
   opacity: 0.25;
   border-radius: 10px;
   box.shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -81,14 +78,12 @@ export default class Pokemon extends Component {
     const pokemonSpeciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${pokemonIndex}/`;
 
     const pokemonRes = await Axios.get(pokemonUrl);
-    //console.log('POKEMONRES '+ pokemonRes)
 
     const name = pokemonRes.data.name;
     const moves = pokemonRes.data.moves.map((move) => ({name: move.name, url: move.url}));
-    //console.log('---- ' + moves)
     
     const imageUrl = `https://img.pokemondb.net/sprites/x-y/normal/${name}.png`;
-    //const movesUrl = `https://pokeapi.co/api/v2/move/${moves.move.name}/`;
+
     let { hp, attack, defense, speed, specialAttack, specialDefense } = "";
 
     pokemonRes.data.stats.map((stat) => {
@@ -134,7 +129,7 @@ export default class Pokemon extends Component {
       .map((stat) => {
         return `${stat.effort} ${stat.stat.name.split('-').join(' ')}`;
       })
-      .join(" ");
+      .join(", ");
 
     await Axios.get(pokemonSpeciesUrl).then((res) => {
       let description = "";
@@ -185,19 +180,15 @@ export default class Pokemon extends Component {
       evs,
       moves
     });
-    //console.log('......' + this.state.pokemonIndex)
   }
 
   render() {
     return (
-      <div className="col">
-        <div className="card" style={{width: '80%', marginLeft: '100px'}}>
+      <div className="col" style={{marginTop: '30px'}}>
+        <div className="card" style={{width: '80%', display: 'block', marginLeft: '200px'}}>
           <div className="card-header">
             <div className="row">
-              <div className="col-5">
-                <h5>{this.state.pokemonIndex}</h5>
-              </div>
-              <div className="float-left" style={{borderLeft: '1px'}}>
+              <div style={{height: 'auto'}}>
                   <button
                     style={{
                       width: "17px",
@@ -222,7 +213,6 @@ export default class Pokemon extends Component {
                     )}
                   </button>
                 </div>
-
             </div>
           </div>
           <div className="card-body">
@@ -392,16 +382,13 @@ export default class Pokemon extends Component {
                 <p>{this.state.description}</p>
               </div>
             </div>
-            <div style={{display: 'flex', justifyContent: 'center'}}>
+            <div style={{display: 'flex', justifyContent: 'center', textAlign: 'center'}}>
                <EvolutionChain
                   key={this.state.name}
                   name={this.state.name}
                   pokemonIndex={this.state.pokemonIndex}
                   imageUrl={this.state.imageUrl}
                />
-            </div>
-            <div>
-              
             </div>
           </div>
           <hr />
@@ -489,7 +476,7 @@ export default class Pokemon extends Component {
                     <h6 className="float-right">EVs:</h6>
                   </div>
                   <div className="col-6">
-                    <h6 className="float-left text-capitalize">+{this.state.evs}</h6>
+                    <h6 className="float-left text-capitalize">{this.state.evs}</h6>
                   </div>
                 </div>
               </div>

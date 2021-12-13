@@ -8,7 +8,7 @@ export default class Dashboard extends Component {
     return (
       <React.Fragment>
         <div className='row'>
-          <div className='col' style={{maxWidth: '60%'}}>
+          <div className='col' style={{maxWidth: '60%', marginTop: '40px'}}>
             <PokedexList />
           </div>
         </div>
