@@ -1,0 +1,14 @@
+.App {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: none;
+    background-color: transparent;
+    background-size:contain ;
+    padding-top: 4rem;
+    min-height: 100vh
+}
+
+body {
+    height: 100%;
+    margin: 0
+}
